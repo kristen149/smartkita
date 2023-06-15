@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 
-// Third-party
+// Third party
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-// ==============================|| CODE HIGHLIGHTER ||============================== //
+// ======================|| CODE HIGHLIGHTER ||============================== //
 
 export default function SyntaxHighlight({ children, ...others }) {
   return (

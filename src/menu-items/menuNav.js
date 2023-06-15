@@ -63,7 +63,7 @@ const menuNav = {
         id: 'einrichtungen',
         title: 'Einrichtungen',
         type: 'item',
-        url: '/login',
+        url: '/einrichtungen',
         icon: icons.BusinessOutlinedIcon
       },
       {
