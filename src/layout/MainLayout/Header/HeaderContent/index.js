@@ -13,7 +13,7 @@ import BtnCalendar from '../../../../components/button/BtnCalendar';
 // ==============================|| HEADER - CONTENT ||============================== //
 
 const HeaderContent = () => {
-  const matchesXs = useMediaQuery((theme) => theme.breakpoints.down('md'));
+  const matchesXs = useMediaQuery((theme) => theme.breakpoints.down('sm'));
 
   return (
     <>
