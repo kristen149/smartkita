@@ -17,7 +17,6 @@ const HeaderTitle = ({ navigation }) => {
   const [item, setItem] = useState();
 
   // icon
-  // const Icon = item.icon;
 
   // const Icon = item.icon;
   // const itemIcon = item.icon ? <Icon style={{ fontSize:'1rem'   }} /> : false;
@@ -63,9 +62,7 @@ const HeaderTitle = ({ navigation }) => {
   if (item && item.type === 'item') {
     itemTitle = item.title;
     itemContent = (
-      <Typography component='h6'  sx={{color:'#FFF', fontSize:'20px', position:'relative', bottom:'-0.1rem'}}>
-        {console.log(item)}
-        
+      <Typography component='h6'  sx={{color:'#FFF', fontSize:'20px', position:'relative', bottom:'-0.1rem'}}>        
         {itemTitle}
       </Typography>
     );
@@ -74,8 +71,6 @@ const HeaderTitle = ({ navigation }) => {
       HeaderContent = (
         <Box  sx={{ width: '100%', ml: { xs: 0, md: 1 } }}>
           <FormControl sx={{ width: { xs: '100%', md: 224, color:'#FFF' } }}>
-
-
             <Typography  variant="h6" sx={{
               textDecoration:'none'
             }}>
@@ -83,7 +78,6 @@ const HeaderTitle = ({ navigation }) => {
                 {itemContent}
 
             </Typography>
-
           </FormControl>
         </Box>
 

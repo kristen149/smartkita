@@ -14,10 +14,6 @@ import BtnCalendar from '../../../../components/button/BtnCalendar';
 
 const HeaderContent = () => {
   const matchesXs = useMediaQuery((theme) => theme.breakpoints.down('md'));
-  // render search
-  // const search = menuItem.items.map((item) => {
-  //   return <Search key={item.children[0].id} item = {item.children[0].title}/>
-  // })
 
   return (
     <>

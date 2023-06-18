@@ -4,6 +4,8 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import EditIcon from '@mui/icons-material/Edit';
+import { useMediaQuery}  from '@mui/material';
+
 // import Divider from '@mui/material/Divider';
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
@@ -62,6 +64,8 @@ const StyledMenu = styled((props) => (
 }));
 
 const BtnSchool = () => {
+  const matchDownSM = useMediaQuery((theme) => theme.breakpoints.down('sm'));
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -73,7 +77,35 @@ const BtnSchool = () => {
 
   return (
     <div>
-       <Button
+      {matchDownSM?
+      <Button
+      id="demo-customized-button"
+      aria-controls={open ? 'demo-customized-menu' : undefined}
+      aria-haspopup="true"
+      aria-expanded={open ? 'true' : undefined}
+      variant="outlined"
+      disableElevation
+      onClick={handleClick}
+      startIcon ={<SchoolOutlinedIcon
+      sx = {{color:mainColor.lightblueBg, mr:'-0.8rem'}} /> 
+      
+    }
+      endIcon={<KeyboardArrowDownIcon 
+      sx= {{color:mainColor.lightblueBg}}
+      />}
+      sx={{mr:'15px',
+        borderRadius: '50px',
+        textTransform:'none',
+        fontWeight:'400',
+        color: mainColor.white,
+        border:`1px solid ${mainColor.white}`,
+        '&:hover': { border: `1px solid ${mainColor.lightblueBg}` }
+    }}
+      
+    >
+    </Button>
+    :
+    <Button
         id="demo-customized-button"
         aria-controls={open ? 'demo-customized-menu' : undefined}
         aria-haspopup="true"
@@ -98,6 +130,10 @@ const BtnSchool = () => {
       >
         Schule
       </Button>
+      
+    
+    }
+       
       <StyledMenu
         id="demo-customized-menu"
         MenuListProps={{

@@ -269,7 +269,7 @@ const Notification = () => {
                       <ListItemText
                         primary={
                           <Typography variant="h6" color="primary">
-                            Mehr sehen
+                            Alle ansehen
                           </Typography>
                         }
                       />

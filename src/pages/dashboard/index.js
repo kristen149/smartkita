@@ -15,7 +15,8 @@ import {
   MenuItem,
   Stack,
   TextField,
-  Typography
+  Typography,
+  useMediaQuery
 } from '@mui/material';
 
 // project import
@@ -73,6 +74,7 @@ const status = [
 // ==============================|| DASHBOARD - DEFAULT ||============================== //
 
 const DashboardDefault = () => {
+  const matchDownSM = useMediaQuery((theme) => theme.breakpoints.down('sm'));
   const [value, setValue] = useState('today');
   const [slot, setSlot] = useState('week');
 
@@ -80,8 +82,8 @@ const DashboardDefault = () => {
     <Grid container rowSpacing={4.5} columnSpacing={2.75}>
       {/* row 1 */}
       <Grid item xs={12} sx={{ mb: -2.25 }}>
-        <Stack direction='row' justifyContent='space-between'>
-          <Typography color='secondary' variant="h4">Waiting List Statistics</Typography>
+        <Stack direction='row' justifyContent='space-between' alignItems='center'>
+          <Typography color='secondary' variant={matchDownSM?'h5':'h4'}>Waiting List Statistics</Typography>
           <BtnView />
         </Stack>
 
@@ -106,8 +108,8 @@ const DashboardDefault = () => {
       <Grid item xs={12} sx={{ mb: -2.25 }}>
         <Grid sx={{ mb: '20px' }}>
 
-          <Stack direction='row' justifyContent='space-between'>
-            <Typography color='secondary' variant="h4">Heading 2</Typography>
+          <Stack direction='row' justifyContent='space-between' alignItems='center'>
+            <Typography color='secondary' variant={matchDownSM?'h5':'h4'}>Heading 2</Typography>
             <BtnView />
           </Stack>
         </Grid>
@@ -115,7 +117,7 @@ const DashboardDefault = () => {
 
         <Grid item xs={12} >
 
-          <Grid container alignItems="center" justifyContent="space-between">
+          <Grid container alignItems="center" justifyContent="space-between" >
 
 
             <Grid item>
@@ -152,8 +154,8 @@ const DashboardDefault = () => {
         {/* ROW 3 */}
         <Grid sx={{ m: '20px 0' }}>
 
-          <Stack direction='row' justifyContent='space-between'>
-            <Typography color='secondary' variant="h4">Heading 3</Typography>
+          <Stack direction='row' justifyContent='space-between' alignItems='center'>
+            <Typography color='secondary' variant={matchDownSM?'h5':'h4'}>Heading 3</Typography>
             <BtnView />
           </Stack>
         </Grid>
@@ -218,9 +220,9 @@ const DashboardDefault = () => {
       <Grid item xs={12} >
         <Grid sx={{ mb: '15px' }}>
 
-          <Stack direction='row' justifyContent='space-between'>
+          <Stack direction='row' justifyContent='space-between' alignItems='center'>
             
-            <Typography color='secondary' variant="h4">Heading 4</Typography>
+            <Typography color='secondary' variant={matchDownSM?'h5':'h4'}>Heading 4</Typography>
             <Stack direction='row'justifyContent="flex-end" spacing={2}>
             <BtnFilter item = 'Filter'/>
             <BtnSort item = 'Sort By' />

@@ -4,18 +4,23 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import EditIcon from '@mui/icons-material/Edit';
+import { useMediaQuery}  from '@mui/material';
+
 // import Divider from '@mui/material/Divider';
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';// COLOR:
-const  mainColor = {
-  darkblueBg:'#202734',
+const mainColor = {
+  darkblueBg: '#202734',
   lightwhite: '#FBFBFB',
   lightblueBg: '#00CC96',
-  white:'#FFF'
+  white: '#FFF'
 
 };
+
+// ======================||Responsive||======================================
+
 
 
 const StyledMenu = styled((props) => (
@@ -29,7 +34,7 @@ const StyledMenu = styled((props) => (
       vertical: 'top',
       horizontal: 'right',
     }}
-    
+
     {...props}
   />
 ))(({ theme }) => ({
@@ -61,6 +66,9 @@ const StyledMenu = styled((props) => (
 }));
 
 const BtnCalendar = () => {
+  const matchDownSM = useMediaQuery((theme) => theme.breakpoints.down('sm'));
+
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -72,7 +80,34 @@ const BtnCalendar = () => {
 
   return (
     <div>
-       <Button
+      {matchDownSM?
+      <Button
+      id="demo-customized-button"
+      aria-controls={open ? 'demo-customized-menu' : undefined}
+      aria-haspopup="true"
+      aria-expanded={open ? 'true' : undefined}
+      variant="outlined"
+      disableElevation
+      onClick={handleClick}
+      startIcon={<CalendarMonthOutlinedIcon
+        sx={{ color: mainColor.lightblueBg, mr:'-0.8rem' }} />}
+      endIcon={<KeyboardArrowDownIcon
+        sx={{ color: mainColor.lightblueBg}}
+      />}
+      
+      sx={{
+        borderRadius: '50px',
+        textTransform: 'none',
+        fontWeight: '400',
+        color: mainColor.white,
+        border: `1px solid ${mainColor.white}`,
+        '&:hover': { border: `1px solid ${mainColor.lightblueBg}` }
+      }}
+
+    >
+    </Button>
+    :
+    <Button
         id="demo-customized-button"
         aria-controls={open ? 'demo-customized-menu' : undefined}
         aria-haspopup="true"
@@ -80,22 +115,29 @@ const BtnCalendar = () => {
         variant="outlined"
         disableElevation
         onClick={handleClick}
-        startIcon ={<CalendarMonthOutlinedIcon
-        sx = {{color:mainColor.lightblueBg}} />}
-        endIcon={<KeyboardArrowDownIcon 
-        sx= {{color:mainColor.lightblueBg, ml:'20px'}}
+        startIcon={<CalendarMonthOutlinedIcon
+          sx={{ color: mainColor.lightblueBg }} />}
+        endIcon={<KeyboardArrowDownIcon
+          sx={{ color: mainColor.lightblueBg, ml: '20px' }}
         />}
-        sx={{mr:'15px',
+        
+        sx={{
+          mr: '15px',
           borderRadius: '50px',
-          textTransform:'none',
-          fontWeight:'400',
+          textTransform: 'none',
+          fontWeight: '400',
           color: mainColor.white,
           border: `1px solid ${mainColor.white}`,
-          '&:hover': { border: `1px solid ${mainColor.lightblueBg}` }      }}
-        
+          '&:hover': { border: `1px solid ${mainColor.lightblueBg}` }
+        }}
+
       >
         Kalendar
       </Button>
+      
+    
+    }
+      
       <StyledMenu
         id="demo-customized-menu"
         MenuListProps={{
@@ -113,7 +155,7 @@ const BtnCalendar = () => {
           <FileCopyIcon />
           Duplicate
         </MenuItem>
-        {/* <Divider sx={{ my: 4 }} /> */}    
+        {/* <Divider sx={{ my: 4 }} /> */}
         <MenuItem onClick={handleClose} disableRipple>
           <MoreHorizIcon />
           More

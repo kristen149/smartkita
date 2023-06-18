@@ -15,6 +15,13 @@ import { MoreOutlined } from '@ant-design/icons';
 // ==============================|| HEADER CONTENT - MOBILE ||============================== //
 
 const MobileSection = () => {
+  const mainColor = {
+    darkblueBg: '#202734',
+    lightwhite: '#FBFBFB',
+    lightblueBg: '#00CC96',
+    white: '#FFF'
+  
+  };
   const theme = useTheme();
 
   const [open, setOpen] = useState(false);
@@ -48,7 +55,8 @@ const MobileSection = () => {
           component="span"
           disableRipple
           sx={{
-            bgcolor: open ? 'grey.300' : 'grey.100'
+            bgcolor: open ? 'grey.500': mainColor.lightblueBg ,
+            color: mainColor.white
           }}
           ref={anchorRef}
           aria-controls={open ? 'menu-list-grow' : undefined}

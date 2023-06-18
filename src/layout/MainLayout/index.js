@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,7 +19,7 @@ import { openDrawer } from 'store/reducers/menu';
 
 // ==============================|| MAIN LAYOUT ||============================== //
 
-const MainLayout = () => {
+const MainLayout = ({item}) => {
   const theme = useTheme();
   const matchDownLG = useMediaQuery(theme.breakpoints.down('lg'));
   const dispatch = useDispatch();
@@ -45,8 +47,9 @@ const MainLayout = () => {
   }, [drawerOpen]);
 
   return (
+    
     <Box sx={{ display: 'flex', width: '100%' }}>
-      <Header open={open} handleDrawerToggle={handleDrawerToggle} />
+      <Header open={open} handleDrawerToggle={handleDrawerToggle} item={item}/>
       <Drawer open={open} handleDrawerToggle={handleDrawerToggle} />
       <Box component="main" sx={{ width: '80%',maxWidth:'100%', flexGrow: 1, p: { xs: 2, sm: 3 } }}>
         <Toolbar />
@@ -56,5 +59,9 @@ const MainLayout = () => {
     </Box>
   );
 };
+
+MainLayout.propTypes ={
+  item: PropTypes.object
+}
 
 export default MainLayout;
