@@ -32,7 +32,8 @@ const BtnFilter = ({ item, handleShow }) => {
                 variant="outlined"
                 disableElevation
                 startIcon={<FilterListOutlinedIcon
-                    sx={{ color: mainColor.lightblueBg }} />}
+                    sx={{ color: mainColor.lightblueBg
+                    }} />}
                 endIcon={<KeyboardArrowDownIcon
                     sx={{ color: mainColor.lightblueBg, ml: matchDownSM? 0: 1 }}
                 />}
@@ -42,7 +43,8 @@ const BtnFilter = ({ item, handleShow }) => {
                     fontWeight: '400',
                     color: mainColor.black,
                     border: `1px solid ${mainColor.black}`,
-                    '&:hover': { border: `1px solid ${mainColor.lightblueBg}` }
+                    '&:hover': { border: `1px solid ${mainColor.lightblueBg}`
+                }
                 }}
                 onClick = {handleShow}
 

@@ -77,34 +77,7 @@ const BtnSchool = () => {
 
   return (
     <div>
-      {matchDownSM?
-      <Button
-      id="demo-customized-button"
-      aria-controls={open ? 'demo-customized-menu' : undefined}
-      aria-haspopup="true"
-      aria-expanded={open ? 'true' : undefined}
-      variant="outlined"
-      disableElevation
-      onClick={handleClick}
-      startIcon ={<SchoolOutlinedIcon
-      sx = {{color:mainColor.lightblueBg, mr:'-0.8rem'}} /> 
       
-    }
-      endIcon={<KeyboardArrowDownIcon 
-      sx= {{color:mainColor.lightblueBg}}
-      />}
-      sx={{mr:'15px',
-        borderRadius: '50px',
-        textTransform:'none',
-        fontWeight:'400',
-        color: mainColor.white,
-        border:`1px solid ${mainColor.white}`,
-        '&:hover': { border: `1px solid ${mainColor.lightblueBg}` }
-    }}
-      
-    >
-    </Button>
-    :
     <Button
         id="demo-customized-button"
         aria-controls={open ? 'demo-customized-menu' : undefined}
@@ -114,9 +87,12 @@ const BtnSchool = () => {
         disableElevation
         onClick={handleClick}
         startIcon ={<SchoolOutlinedIcon
-        sx = {{color:mainColor.lightblueBg}} />}
+        sx = {{color:mainColor.lightblueBg,
+        mr: matchDownSM? '-0.8rem':0
+        }} />}
         endIcon={<KeyboardArrowDownIcon 
-        sx= {{color:mainColor.lightblueBg, ml:'15px'}}
+        sx= {{color:mainColor.lightblueBg, 
+          ml:matchDownSM?0:'15px'}}
         />}
         sx={{mr:'15px',
           borderRadius: '50px',
@@ -128,12 +104,9 @@ const BtnSchool = () => {
       }}
         
       >
-        Schule
+        {matchDownSM?'':'Schule'}
       </Button>
-      
-    
-    }
-       
+        
       <StyledMenu
         id="demo-customized-menu"
         MenuListProps={{

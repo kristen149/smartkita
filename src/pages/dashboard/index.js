@@ -220,9 +220,13 @@ const DashboardDefault = () => {
       <Grid item xs={12} >
         <Grid sx={{ mb: '15px' }}>
 
-          <Stack direction='row' justifyContent='space-between' alignItems='center'>
+          <Stack direction={{sm:'column', md:'row'}} justifyContent='space-between' alignItems={{sm:'inherit', md:'center'}} >
             
-            <Typography color='secondary' variant={matchDownSM?'h5':'h4'}>Heading 4</Typography>
+            <Typography color='secondary' variant={matchDownSM?'h5':'h4'}
+            sx={{
+              mb: matchDownSM?2:0
+            }}
+            >Heading 4</Typography>
             <Stack direction='row'justifyContent="flex-end" spacing={2}>
             <BtnFilter item = 'Filter'/>
             <BtnSort item = 'Sort By' />
