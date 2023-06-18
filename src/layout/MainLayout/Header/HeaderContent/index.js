@@ -13,19 +13,19 @@ import BtnCalendar from '../../../../components/button/BtnCalendar';
 // ==============================|| HEADER - CONTENT ||============================== //
 
 const HeaderContent = () => {
-  const matchesXs = useMediaQuery((theme) => theme.breakpoints.down('md'));
+  const matchesSm = useMediaQuery((theme) => theme.breakpoints.down('sm'));
 
   return (
     <>
     
-      {!matchesXs && <HeaderTitle navigation={navigation} />}
-      {matchesXs && <Box sx={{ width: '100%', ml: 1 }} />}
+      {!matchesSm && <HeaderTitle navigation={navigation} />}
+      {matchesSm && <Box sx={{ width: '100%', ml: 1 }} />}
       <BtnSchool />
       <BtnCalendar/>
 
       <Notification />
-      {!matchesXs && <Profile />}
-      {matchesXs && <MobileSection />}
+      {!matchesSm && <Profile />}
+      {matchesSm && <MobileSection />}
     </>
   );
 };

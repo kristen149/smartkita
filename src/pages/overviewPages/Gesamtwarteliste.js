@@ -41,10 +41,10 @@ const Gesamtwarteliste = () => {
 
             {show && (
                 <MainCard title="Demo" sx={{ m: '20px 0' }}>
-                    <Stack direction='column' spacing={2}>
+                    <Stack direction='column' spacing={3}>
 
 
-                        <Stack direction='row' spacing={4} alignItems='center' >
+                        <Stack direction={{sm:'column', md:'row'}} spacing={4} alignItems={{sm:'inherit', md:'center'}} >
 
                             <Typography
                                 sx={{ fontSize: '20px' }} >Geburtsdatum</Typography>
@@ -53,7 +53,7 @@ const Gesamtwarteliste = () => {
 
                         </Stack>
 
-                        <Stack direction='row' spacing={4} alignItems='center'>
+                        <Stack direction={{sm:'column', md:'row'}} spacing={4} alignItems={{sm:'inherit', md:'center'}}>
 
                             <Typography
                                 sx={{ fontSize: '20px' }} >(gew.) Eintrittsdatum</Typography>

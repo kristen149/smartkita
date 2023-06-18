@@ -48,7 +48,8 @@ const actionSX = {
 
 const Notification = () => {
   const theme = useTheme();
-  const matchesXs = useMediaQuery(theme.breakpoints.down('md'));
+  const matchesMd = useMediaQuery(theme.breakpoints.down('md'));
+  const matchesSm = useMediaQuery(theme.breakpoints.down('sm'));
 
   const anchorRef = useRef(null);
   const [open, setOpen] = useState(false);
@@ -74,7 +75,7 @@ const Notification = () => {
         color="secondary"
         sx={{
           color: iconBackColor,
-          mr: '10px'
+          mr: matchesSm?'2px':'10px'
 
         }}
         aria-label="open profile"
@@ -95,7 +96,7 @@ const Notification = () => {
         </Badge>
       </IconButton>
       <Popper
-        placement={matchesXs ? 'bottom' : 'bottom-end'}
+        placement={matchesSm ? 'bottom' : 'bottom-end'}
         open={open}
         anchorEl={anchorRef.current}
         role={undefined}
@@ -106,7 +107,7 @@ const Notification = () => {
             {
               name: 'offset',
               options: {
-                offset: [matchesXs ? -5 : 0, 9]
+                offset: [matchesMd ? -5 : 0, 9]
               }
             }
           ]
