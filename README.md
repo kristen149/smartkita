@@ -3,7 +3,7 @@
 
 ## Demo website
 
-![image](https://github.com/kristen149/smartkita/assets/100759917/b8b6226d-4978-4913-b60f-bdd37411b9c9)
+![image](https://github.com/kristen149/smartkita/assets/100759917/8daaf0bc-2fda-4bcb-b69e-c2ef7f1bf702)
  
 ![image](https://github.com/kristen149/smartkita/assets/100759917/aa8decaa-5be2-45b2-bc68-b71923cf76d0)
 
