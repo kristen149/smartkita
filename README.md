@@ -1,5 +1,16 @@
 # smartkita v1.1 New Design
 
+## Getting Started
+
+ Clone this repository - `git clone https://github.com/kristen149/smartkita` <br/>
+ You will need `node.js` and `git` installed in your PC/laptop
+
+ 
+ ###  Login with
+ #### eMail: `demo@smartkita.app`
+ #### Password: `Test123`
+
+
 
 ## Demo website
 
@@ -12,10 +23,6 @@
 ![image](https://github.com/kristen149/smartkita/assets/100759917/c90343b7-80c8-4732-b64a-2faf775126d1)
 
 
-## Getting Started
-
- Clone this repository - `git clone https://github.com/kristen149/smartkita` <br/>
- You will need `node.js` and `git` installed in your PC/laptop
 
 ## Installation
 
