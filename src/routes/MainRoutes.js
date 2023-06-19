@@ -7,6 +7,7 @@ import MainLayout from 'layout/MainLayout';
 // render - dashboard
 const OverviewDefault = Loadable(lazy(() => import('pages/dashboard')));
 
+// const AuthLogin = Loadable(lazy(() => import('pages/authentication/Login')));
 
 // render - overview
 
@@ -25,7 +26,7 @@ const MainRoutes = {
   element: <MainLayout />,
   children: [
     {
-      path: '/smartkita',
+      path: '/',
       element: <OverviewDefault />
     },
     {

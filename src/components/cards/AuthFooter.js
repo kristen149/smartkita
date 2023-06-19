@@ -1,5 +1,5 @@
 // material-ui
-import { useMediaQuery, Container, Link, Typography, Stack } from '@mui/material';
+import { useMediaQuery, Container,  Typography, Stack } from '@mui/material';
 
 // ==============================|| FOOTER - AUTHENTICATION ||============================== //
 
@@ -15,8 +15,8 @@ const AuthFooter = () => {
         textAlign={matchDownSM ? 'center' : 'inherit'}
       >
         <Typography variant="subtitle2" color="secondary" component="span">
-          <Typography component={Link} variant="h5" href="/overview/default" target="_blank" >
-            &copy; SmartKita GmBH&nbsp;
+          <Typography variant='h5' color='primary' target="_blank" >
+            &copy; smartkita GmBH&nbsp;
           </Typography>
         </Typography>
 {/* 

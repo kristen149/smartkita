@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 // material-ui
 import {
@@ -50,13 +51,30 @@ const AuthLogin = () => {
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
+  // LOGIN 
+  const navigate = useNavigate()
+
+  const handleLogin = (values, setSubmiting) => {
+    // Simulating login resquest
+    
+    if (values.email==='demo@smartkita.app' && values.password =='Test123' ) {
+      alert('Login erfolgreich, bitte warten')
+      navigate('/overview/default')
+    } else {
+      alert('Ihr Login war nicht erfolgreich. Bitte überprüfen Sie Ihre Eingabe und probieren Sie erneut')
+      setSubmiting(false)
+    }
+   
+
+  }
+  // =========================================================================
 
   return (
     <>
       <Formik
         initialValues={{
           email: 'demo@smartkita.app',
-          password: '',
+          password: 'Test123',
           submit: null
         }}
         validationSchema={Yup.object().shape({
@@ -65,6 +83,7 @@ const AuthLogin = () => {
         })}
         onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
           try {
+            handleLogin(values, setSubmitting)
             setStatus({ success: false });
             setSubmitting(false);
           } catch (err) {
@@ -169,6 +188,7 @@ const AuthLogin = () => {
               <Grid item xs={12}>
                 <AnimateButton>
                   <Button disableElevation disabled={isSubmitting} fullWidth size="large" type="submit" variant="contained" 
+                  // onClick = {() => handleLogin()}
                   sx={{
                     bgcolor:mainColor.orange,
                     '&:hover' : {

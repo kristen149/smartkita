@@ -15,11 +15,7 @@ import { Link } from '../../../node_modules/react-router-dom/dist/index';
 const Logo = () => {
 
   return (
-    /**
-     * if you want to use image instead of svg uncomment following, and comment out <svg> element.
-     *
-     *
-     */
+  
     <>
       <Link to ='/overview/default'>
         <img src={logo} alt="smartKita" />
