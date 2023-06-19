@@ -74,7 +74,7 @@ const AuthLogin = () => {
       <Formik
         initialValues={{
           email: 'demo@smartkita.app',
-          password: 'Test123',
+          password: '',
           submit: null
         }}
         validationSchema={Yup.object().shape({
